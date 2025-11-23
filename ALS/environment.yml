@@ -1,0 +1,29 @@
+name: spark_env
+channels:
+  - conda-forge
+  - defaults
+dependencies:
+  - python=3.10          # versión recomendada para Spark
+  - pyspark=3.5.5              # PySpark
+  - openjdk=11           # Java necesario para Spark
+  - numpy
+  - pandas
+  - py4j                 # comunicación entre Python y JVM
+
+  # BLAS / MKL (para evitar warnings y mejorar rendimiento)
+  - mkl
+  - blas
+  - numexpr
+  - scipy
+
+  # Opcional: Jupyter notebook para pruebas
+  - jupyterlab
+
+  # Para borrar warnings de logging
+  - pip
+  - pip:
+      - findspark
+
+
+# Nota: se ocupan poner los dos archivos en la carpeta de hadoop en los Environment Variables como: System variables -> Path -> Edit -> New
+# C:\hadoop\bin
