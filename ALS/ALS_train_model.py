@@ -3,6 +3,11 @@ from pyspark.sql.functions import udf, col
 from pyspark.ml.linalg import Vectors, VectorUDT
 from pyspark.ml.feature import BucketedRandomProjectionLSH
 from pyspark.sql import SparkSession
+import os
+import sys
+
+os.environ["PYSPARK_PYTHON"] = sys.executable
+os.environ["PYSPARK_DRIVER_PYTHON"] = sys.executable
 
 spark = SparkSession.builder.getOrCreate()
 
@@ -62,6 +67,6 @@ def recomendar_usuarios_similares(als_model, user_id, spark, top_k=10, path_usua
 
 
 
-result = recomendar_usuarios_similares(als_model=loaded_model,user_id=50,spark=spark,top_k=10, path_usuarios="usuarios_completos.csv")
+result = recomendar_usuarios_similares(als_model=loaded_model,user_id=1,spark=spark,top_k=10, path_usuarios="usuarios_completos.csv")
 
 result.show(truncate=False)
