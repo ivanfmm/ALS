@@ -1,0 +1,12 @@
+Para poder correr el código se requiere hacer un 2 cosas primero:
+
+1. Instalar Anaconda package manager de https://www.anaconda.com/download/success , para utilizar el entorno que se encuentra en el archivo (environment.yml). Asegurarse que al 
+correr el código se inicialice en la termial el entorno. para ello correr:
+-> conda env create -f environment.yml
+-> conda activate spark_env
+
+2. la carpeta que se llama hadoop en el directorio, moverla a una dirección, de manera que quede como "C:\hadoop" . Una ves esto, ir a las variables de entorno de la computadora
+, en path poner seleccionar nueva y escribir C:\hadoop
+
+
+NOTA: ALS_model.py es para entrenar el modelo, mientras que ALS_train_model.py es para hacer las consultas
