@@ -31,7 +31,7 @@ class SistemaRecomendacionUsuarios:
         """Verifica el estado del modelo y la base de datos"""
         try:
             # Verificar modelo
-            model_path = "modelo_als"
+            model_path = "modelo_entrenado"
             if os.path.exists(model_path):
                 self.modelo_cargado = True
             else:
@@ -62,7 +62,7 @@ class SistemaRecomendacionUsuarios:
                 .getOrCreate()
             
             # Cargar modelo
-            model_path = "modelo_als"
+            model_path = "modelo_entrenado"
             self.modelo = ALSModel.load(model_path)
             self.modelo_cargado = True
             
@@ -1223,4 +1223,5 @@ def main():
 
 
 if __name__ == "__main__":
+
     main()
